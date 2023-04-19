@@ -6,13 +6,23 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-<div>
-    <h1 style="color:mediumpurple">Tác Giả</h1>
 
 
-    <a class="btn btn-primary" asp-action="ThemSanPhamMoi">Thêm tác giả mới</a>
+<h2 class="page-title">
+    <span class="page-title-icon bg-gradient-primary text-white me-2">
+        <i class="mdi mdi-account-box"></i>
+    </span> Quản lý tác giả
+</h2>
+<p style="float:right">
+    <a asp-controller="HomeAdmin" asp-action="ThemSanPhamMoi" class="create">
+        <button type="button" class="btn btn-outline-danger btn-icon-text">
+            <i class="mdi mdi-upload btn-icon-prepend upload"></i>Thêm mới tác giả
+        </button>
+    </a>
+</p>
 
-</div>
+
+
 <p>@TempData["Message"]</p>
 <table class="table">
     <thead>
@@ -69,9 +79,20 @@
                 </td>
 
                 <td>
-                    <a asp-controller="HomeAdmin" asp-action="SuaSanPham" asp-route-maSanPham="@item.MaTacGia">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.MaTacGia">Details</a> |
-                    <a asp-action="XoaSanPham" asp-route-maSp="@item.MaTacGia">Delete</a>
+                    <a asp-controller="HomeAdmin" asp-action="SuaSanPham" asp-route-maSanPham="@item.MaTacGia" style="text-decoration: none">
+                        <button type="button" class="btn-sm btn-gradient-dark ">
+                            Edit
+                        </button>
+                    </a>
+
+                    <button type="button" class="btn-sm btn-gradient-info" asp-action="Details" asp-route-id="@item.MaTacGia">Details</button>
+
+                    <a asp-action="XoaSanPham" asp-route-maSp="@item.MaTacGia" style="text-decoration: none">
+                        <button type="button" class="btn-sm btn-gradient-danger">
+                            Delete
+                        </button>
+                    </a>
+
                 </td>
             </tr>
         }

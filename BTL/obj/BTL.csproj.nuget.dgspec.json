@@ -64,6 +64,10 @@
               "target": "Package",
               "version": "[6.0.13, )"
             },
+            "NToastNotify": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "X.PagedList": {
               "target": "Package",
               "version": "[8.4.7, )"
@@ -79,6 +83,10 @@
             "X.PagedList.Web.Common": {
               "target": "Package",
               "version": "[8.0.7, )"
+            },
+            "toastr": {
+              "target": "Package",
+              "version": "[2.1.1, )"
             }
           },
           "imports": [
@@ -100,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

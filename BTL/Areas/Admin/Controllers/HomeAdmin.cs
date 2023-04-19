@@ -24,8 +24,16 @@ namespace BTH1.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
+            var soluonggt = db.DmgiaoTrinhs.Count().ToString();
+            var banmuon = db.Hsmuons.Count().ToString();
+            var bantra = db.HoSoTras.Count().ToString();
+            ViewBag.soluonggiaotrinh = soluonggt;
+            ViewBag.banmuon = banmuon;
+            ViewBag.bantra = bantra;
             return View();
         }
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("danhsachsanpham")]
         public IActionResult DanhSachSanPham(int page = 1)
         {
@@ -35,6 +43,8 @@ namespace BTH1.Areas.Admin.Controllers
             PagedList<TacGium> lst = new PagedList<TacGium>(lstsanpham, pageNumber, pageSize);
             return View(lst);
         }
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("ThemSanPhamMoi")]
         [HttpGet]
         public IActionResult ThemSanPhamMoi()
@@ -60,7 +70,8 @@ namespace BTH1.Areas.Admin.Controllers
             return View(sanPham);
         }
 
-
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("SuaSanPham")]
         [HttpGet]
         public IActionResult SuaSanPham(string maSanPham)
@@ -107,6 +118,8 @@ namespace BTH1.Areas.Admin.Controllers
             TempData["Message"] = "Sản phẩm đã được xóa";
             return RedirectToAction("DanhSachSanPham");
         }
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("sanphamtheoloai")]
         public IActionResult sanphamtheoloai()
         {
@@ -116,7 +129,8 @@ namespace BTH1.Areas.Admin.Controllers
             return View(lstsanpham);
 
         }
-
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("themsanpham")]
 
         public IActionResult ThemSanPham()
@@ -131,6 +145,8 @@ namespace BTH1.Areas.Admin.Controllers
 
             return View();
         }
+        [Authenication]
+        [AuthenicationQuyen]
         [ValidateAntiForgeryToken]
         [Route("themsanpham")]
         [HttpPost]
@@ -144,7 +160,8 @@ namespace BTH1.Areas.Admin.Controllers
             }
             return View(sanPham);
         }
-
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("sualsanpham")]
 
         public IActionResult sualsanpham(string themuon)
@@ -180,6 +197,8 @@ namespace BTH1.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("sanphamtheoloai");
         }
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("themuom")]
         public IActionResult themuom()
         {
@@ -201,8 +220,9 @@ namespace BTH1.Areas.Admin.Controllers
             False
 
         }
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("themthemuon")]
-
         public IActionResult themthemuon()
         {
 
@@ -225,6 +245,8 @@ namespace BTH1.Areas.Admin.Controllers
             }
             return View(theMuon);
         }
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("Suathemuon")]
 
         public IActionResult Suathemuon(string themuon)
@@ -259,6 +281,8 @@ namespace BTH1.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("themuom");
         }
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("DanhSachThuThu")]
         public IActionResult DanhSachThuThu(int page = 1)
         {
@@ -268,6 +292,8 @@ namespace BTH1.Areas.Admin.Controllers
             PagedList<ThuThu> lst = new PagedList<ThuThu>(lstthuthu, pageNumber, pageSize);
             return View(lst);
         }
+        [Authenication]
+        [AuthenicationQuyen]
         [Route("ThemThuThu")]
         [HttpGet]
         public IActionResult ThemThuThu()

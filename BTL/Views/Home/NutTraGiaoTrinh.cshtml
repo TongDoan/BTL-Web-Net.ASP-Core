@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "NutTraGiaoTrinh";
-    Layout = "~/Views/Shared/_LayoutLibraly.cshtml";
+    Layout = "~/Views/Shared/Giaotrinh.cshtml";
 }
 <div style="width:100%">
 <h1>Xác nhận trả giáo trình</h1>
@@ -12,7 +12,7 @@
         <form asp-action="NutTraGiaoTrinh">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <label class="control-label"> Mã hồ sơ trả</label></br>
-            <input  asp-for="MaHstra" />
+            <input asp-for="MaHstra" /></br>
             <label class="control-label"> Mã giáo trình</label></br>
             <input asp-for="MaGt" /></br>
             <div class="form-group">

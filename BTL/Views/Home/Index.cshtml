@@ -27,9 +27,13 @@
 }
 </div>
 <div class="site-block-27">
-    <ul>
+    <ul >
          @Html.PagedListPager(Model,page=>Url.Action("Index",new{page=page}))
     </ul>
 </div>
 
-
+<style>
+    .pagination{
+        justify-content:center;
+    }
+</style>

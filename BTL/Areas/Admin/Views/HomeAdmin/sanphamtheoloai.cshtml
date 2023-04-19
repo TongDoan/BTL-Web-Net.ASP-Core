@@ -7,12 +7,18 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>sanphamtheoloai</h1>
 
-<p>
+<h2 class="page-title" >
+    <span class="page-title-icon bg-gradient-primary text-white me-2">
+        <i class="mdi mdi-library-books"></i>
+    </span> Quản lý giáo trình
+</h2>
+
+
+<p style="float:right">
     <a asp-controller="HomeAdmin" asp-action="ThemSanPham" class="create">
         <button type="button" class="btn btn-outline-danger btn-icon-text">
-            <i class="mdi mdi-upload btn-icon-prepend upload"></i>Create New
+            <i class="mdi mdi-upload btn-icon-prepend upload"></i>Thêm mới giáo trình
         </button>
     </a>
 </p>

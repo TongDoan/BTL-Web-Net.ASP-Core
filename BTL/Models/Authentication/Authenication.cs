@@ -13,8 +13,8 @@ namespace BTL.Models.Authentication
                 context.Result = new RedirectToRouteResult(
                     new RouteValueDictionary
                     {
-                        {"Controller","Access" },
-                        {"Action", "Login" }
+                        {"Controller","Home" },
+                        {"Action", "ErrorLayout" }
                     });
             }         
         }

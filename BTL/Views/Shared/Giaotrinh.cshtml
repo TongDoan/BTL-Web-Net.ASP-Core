@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Hoang Hon &mdash; Hotel</title>
+    <title>Quản Lý Giáo Trình</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="../css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="../css/animate.css">
+
+    
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
@@ -52,7 +54,7 @@
                     <div class="py-1">
                         <div class="row align-items-center">
                             <div class="col-2">
-                                <h2 class="mb-0 site-logo"><a href="index.html">Hoang Hon</a></h2>
+                                <h2 class="mb-0 site-logo"><a href="index.html">Giáo Trình</a></h2>
                             </div>
                             <div class="col-10">
                                 <nav class="site-navigation text-right" role="navigation">
@@ -75,10 +77,11 @@
                                                 <ul class="dropdown arrow-top">
                                                     <li><a asp-controller="Home" asp-action="TraGiaoTrinh">Quản lý hồ sơ trả</a></li>
                                                     <li><a asp-controller="Home" asp-action="ChiTietTraGiaoTrinh">Quản lý hồ sơ phạt</a></li>
+
                                                 </ul>
                                             </li>
-                                            <li><a href="about.html">Thông tin</a></li>
                                             <li><a href="contact.html">Liên hệ</a></li>
+                                            <li><a <a asp-controller="Access" asp-action="Logout">Đăng xuất</a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -92,35 +95,35 @@
         <!-- slide trang chủ -->
         <div class="slide-one-item home-slider owl-carousel">
 
-            <div class="site-blocks-cover overlay" style="background-image: url(../images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+            <div class="site-blocks-cover overlay" style="background-image: url(../images/ThuVien1.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-7 text-center" data-aos="fade">
 
-                            <h1 class="mb-2">Welcome To Suites</h1>
-                            <h2 class="caption">Hotel &amp; Resort</h2>
+                            <h1 class="mb-2">Chào mừng đến với trung tâm giáo trình</h1>
+                            <h2 class="caption">Tri thức là sức mạnh</h2>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="site-blocks-cover overlay" style="background-image: url(../images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+            <div class="site-blocks-cover overlay" style="background-image: url(../images/ThuVien2.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-7 text-center" data-aos="fade">
-                            <h1 class="mb-2">Unique Experience</h1>
-                            <h2 class="caption">Enjoy With Us</h2>
+                            <h1 class="mb-2">Trải nghiệm độc đáo</h1>
+                            <h2 class="caption">Tận hưởng không gian độc đáo</h2>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="site-blocks-cover overlay" style="background-image: url(../images/hero_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+            <div class="site-blocks-cover overlay" style="background-image: url(../images/ThuVien3.jpeg);" data-aos="fade" data-stellar-background-ratio="0.5">
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-7 text-center" data-aos="fade">
-                            <h1 class="mb-2">Relaxing Room</h1>
-                            <h2 class="caption">Your Room, Your Stay</h2>
+                            <h1 class="mb-2">Tài liệu phong phú đa dạng</h1>
+                            <h2 class="caption">Dịch vụ tậm tâm</h2>
                         </div>
                     </div>
                 </div>
@@ -128,12 +131,12 @@
 
         </div>
 
-        <!-- danh sách phòng -->
         <div class="site-section bg-light">
             <div id="displayproducts" class="container">
                     @RenderBody()
             </div>
         </div>
+
 
         <!-- Thông tin -->
         <div class="site-section">
@@ -142,15 +145,15 @@
                     <div class="col-md-6 mb-5 mb-md-0">
 
                         <div class="img-border">
-                            <a href="https://vimeo.com/28959265" class="popup-vimeo image-play">
+                            <a href="https://www.youtube.com/watch?v=N2tFU-J40qA" class="popup-vimeo image-play">
                                 <span class="icon-wrap">
-                    <span class="icon icon-play"></span>
+                                    <span class="icon icon-play"></span>
                                 </span>
-                                <img src="../images/img_2.jpg" alt="" class="img-fluid">
+                                <img src="../images/NenThuVien.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
 
-                        <img src="../images/img_1.jpg" alt="Image" class="img-fluid image-absolute">
+                        <img src="../images/ThuVien6.jpg" alt="Image" class="img-fluid image-absolute">
 
                     </div>
                     <div class="col-md-5 ml-auto">
@@ -159,87 +162,26 @@
                         <div class="section-heading text-left">
                             <h2 class="mb-5">Thông tin</h2>
                         </div>
-                        <p class="mb-4">Khách sạn Hoàng Hôn luôn mang vẻ đẹp hiện đại xen lẫn nét cổ kính. Đặt khách sạn sớm nhất để hưởng trọn ưu đãi, hứa hẹn một kì nghỉ với những ...</p>
-                        <p><a href="https://vimeo.com/28959265" class="popup-vimeo text-uppercase">Xem Video <span class="icon-arrow-right small"></span></a></p>
+                        <p class="mb-4">Bạn đang tìm kiếm một nơi để mở rộng kiến thức, khám phá những thế giới mới và khám phá những khả năng vô tận? Không tìm đâu xa hãy tới với chúng tôi! Không chỉ là một bộ sưu tập sách mà còn là cửa ngõ dẫn đến một vũ trụ tri thức, trí tưởng tượng và nguồn cảm hứng vô tận.</p>
+                        <p><a href="https://www.youtube.com/watch?v=N2tFU-J40qA" class="popup-vimeo text-uppercase">Xem Video <span class="icon-arrow-right small"></span></a></p>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <!-- Danh sách tính năng -->
-        <div class="site-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-                        <h2 class="mb-5">TÍNH NĂNG HIỆN CÓ</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="text-center p-4 item">
-                            <span class="flaticon-pool display-3 mb-3 d-block text-primary"></span>
-                            <h2 class="h5">Hồ bơi</h2>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="text-center p-4 item">
-                            <span class="flaticon-desk display-3 mb-3 d-block text-primary"></span>
-                            <h2 class="h5">Gọi thức ăn nhanh</h2>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="text-center p-4 item">
-                            <span class="flaticon-exit display-3 mb-3 d-block text-primary"></span>
-                            <h2 class="h5">Thoát hiểm an toàn</h2>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="text-center p-4 item">
-                            <span class="flaticon-parking display-3 mb-3 d-block text-primary"></span>
-                            <h2 class="h5">Bãi đổ xe</h2>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="text-center p-4 item">
-                            <span class="flaticon-hair-dryer display-3 mb-3 d-block text-primary"></span>
-                            <h2 class="h5">Tạo mẫu tóc</h2>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="text-center p-4 item">
-                            <span class="flaticon-minibar display-3 mb-3 d-block text-primary"></span>
-                            <h2 class="h5">Quầy bar</h2>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="text-center p-4 item">
-                            <span class="flaticon-drink display-3 mb-3 d-block text-primary"></span>
-                            <h2 class="h5">Thức uống</h2>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="text-center p-4 item">
-                            <span class="flaticon-cab display-3 mb-3 d-block text-primary"></span>
-                            <h2 class="h5">Thuê ô tô</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- khuyến mãi -->
-        <div class="py-5 upcoming-events" style="background-image: url('../images/hero_1.jpg'); background-attachment: fixed;">
+        <div class="py-5 upcoming-events" style="background-image: url('../images/ThuVien4.jpg'); background-attachment: fixed;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <h2 class="text-white">Summer Promo 50% Off</h2>
-                        <a href="#" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Avail Now</a>
+                        <h2 class="text-white">Khuyến mại 50% </h2>
+                        <a href="#" class="text-white btn btn-outline-warning rounded-0 text-uppercase">Tới ngay luôn</a>
                     </div>
                     <div class="col-md-6">
-                        <span class="caption">The Promo will start in</span>
+                        <span class="caption">Bắt đầu từ</span>
                         <div id="date-countdown"></div>
                     </div>
                 </div>
@@ -252,34 +194,34 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-                        <h2 class="mb-5">Phòng còn trống</h2>
+                        <h2 class="mb-5">Giáo trình sẵn có</h2>
                     </div>
                 </div>
                 <div class="row no-gutters">
                     <div class="col-md-6 col-lg-3">
-                        <a href="../GTimages/images/1.jpg" class="image-popup img-opacity"><img src="../GTimages/images/1.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="../images/1.jpg" class="image-popup img-opacity"><img src="../images/1.jpg" alt="Image" class="img-fluid"></a>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <a href="../GTimages/images/2.jpg" class="image-popup img-opacity"><img src="../GTimages/images/2.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="../images/2.jpg" class="image-popup img-opacity"><img src="../images/2.jpg" alt="Image" class="img-fluid"></a>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <a href="../GTimages/images/3.jpg" class="image-popup img-opacity"><img src="../GTimages/images/3.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="../images/3.jpg" class="image-popup img-opacity"><img src="../images/3.jpg" alt="Image" class="img-fluid"></a>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <a href="../GTimages/images/4.jpg" class="image-popup img-opacity"><img src="../GTimages/images/4.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="../images/4.jpg" class="image-popup img-opacity"><img src="../images/4.jpg" alt="Image" class="img-fluid"></a>
                     </div>
 
                     <div class="col-md-6 col-lg-3">
-                        <a href="../GTimages/images/5.jpg" class="image-popup img-opacity"><img src="../GTimages/images/5.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="../images/5.jpg" class="image-popup img-opacity"><img src="../images/5.jpg" alt="Image" class="img-fluid"></a>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <a href="../GTimages/images/6.jpg" class="image-popup img-opacity"><img src="../GTimages/images/6.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="../images/6.jpg" class="image-popup img-opacity"><img src="../images/6.jpg" alt="Image" class="img-fluid"></a>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <a href="../GTimages/images/7.jpg" class="image-popup img-opacity"><img src="../GTimages/images/7.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="../images/7.jpg" class="image-popup img-opacity"><img src="../images/7.jpg" alt="Image" class="img-fluid"></a>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <a href="../GTimages/images/8.jpg" class="image-popup img-opacity"><img src="../GTimages/images/8.jpg" alt="Image" class="img-fluid"></a>
+                        <a href="../images/8.jpg" class="image-popup img-opacity"><img src="../images/8.jpg" alt="Image" class="img-fluid"></a>
                     </div>
 
                 </div>
@@ -292,7 +234,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-                        <h2>Thông tin phòng</h2>
+                        <h2>Thông tin phòng đọc</h2>
                     </div>
                 </div>
 
@@ -303,7 +245,7 @@
                     <div class="media-with-text p-md-5">
                         <div class="img-border-sm mb-4">
                             <a href="#" class="popup-vimeo image-play">
-                                <img src="../images/img_1.jpg" alt="" class="img-fluid">
+                                <img src="../images/ThuVien1.jpeg" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
@@ -314,7 +256,7 @@
                     <div class="media-with-text p-md-4">
                         <div class="img-border-sm mb-4">
                             <a href="#" class="popup-vimeo image-play">
-                                <img src="../images/img_2.jpg" alt="" class="img-fluid">
+                                <img src="../images/ThuVien2.jpeg" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
@@ -325,7 +267,7 @@
                     <div class="media-with-text p-md-4">
                         <div class="img-border-sm mb-4">
                             <a href="#" class="popup-vimeo image-play">
-                                <img src="../images/img_3.jpg" alt="" class="img-fluid">
+                                <img src="../images/ThuVien7.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
@@ -336,7 +278,7 @@
                     <div class="media-with-text p-md-4">
                         <div class="img-border-sm mb-4">
                             <a href="#" class="popup-vimeo image-play">
-                                <img src="../images/img_1.jpg" alt="" class="img-fluid">
+                                <img src="../images/ThuVien1.jpeg" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
@@ -347,7 +289,7 @@
                     <div class="media-with-text p-md-4">
                         <div class="img-border-sm mb-4">
                             <a href="#" class="popup-vimeo image-play">
-                                <img src="../images/img_2.jpg" alt="" class="img-fluid">
+                                <img src="../images/ThuVien2.jpeg" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
@@ -358,7 +300,7 @@
                     <div class="media-with-text p-md-4">
                         <div class="img-border-sm mb-4">
                             <a href="#" class="popup-vimeo image-play">
-                                <img src="../images/img_3.jpg" alt="" class="img-fluid">
+                                <img src="../images/ThuVien7.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
@@ -369,7 +311,7 @@
                     <div class="media-with-text p-md-4">
                         <div class="img-border-sm mb-4">
                             <a href="#" class="popup-vimeo image-play">
-                                <img src="../images/img_1.jpg" alt="" class="img-fluid">
+                                <img src="../images/ThuVien1.jpeg" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
@@ -380,7 +322,7 @@
                     <div class="media-with-text p-md-4">
                         <div class="img-border-sm mb-4">
                             <a href="#" class="popup-vimeo image-play">
-                                <img src="../images/img_2.jpg" alt="" class="img-fluid">
+                                <img src="../images/ThuVien2.jpeg" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
@@ -391,7 +333,7 @@
                     <div class="media-with-text p-md-4">
                         <div class="img-border-sm mb-4">
                             <a href="#" class="popup-vimeo image-play">
-                                <img src="../images/img_3.jpg" alt="" class="img-fluid">
+                                <img src="../images/ThuVien7.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="heading mb-0"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
@@ -414,7 +356,7 @@
                 <div class="row">
                     <div class="col-md-6 mx-auto text-center mb-5 section-heading">
                         <!-- <h2>Phản hồi khách hàng</h2> -->
-                        <h2>Danh sách phòng</h2>
+                        <h2>Phản hồi</h2>
 
                     </div>
                 </div>
@@ -426,7 +368,7 @@
                     <div class="p-4">
                         <div class="d-flex block-testimony">
                             <div class="person mr-3" style="width:50%;height:100%;">
-                                <a href="roomDetails.html" class="d-block mb-0 thumbnail"><img src="../images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                                <a href="roomDetails.html" class="d-block mb-0 thumbnail"><img src="../images/ThuVien1.jpeg" alt="Image" class="img-fluid"></a>
                             </div>
                             <div>
                                 <h3 class="heading mb-0"><a href="roomDetails.html">Standard Room</a></h3>
@@ -482,21 +424,21 @@
                     <div class="col-md-4 text-center">
                         <div>
                             <span class="icon-room text-white h2 d-block"></span>
-                            <h2>Location</h2>
+                            <h2>Địa điểm</h2>
                             <p class="mb-0">New York - 2398 <br> 10 Hadson Carl Street</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <div>
                             <span class="icon-clock-o text-white h2 d-block"></span>
-                            <h2>Service Times</h2>
+                            <h2>Thời gian phục vụ</h2>
                             <p class="mb-0">Wednesdays at 6:30PM - 7:30PM <br> Fridays at Sunset - 7:30PM <br> Saturdays at 8:00AM - Sunset</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <div>
                             <span class="icon-comments text-white h2 d-block"></span>
-                            <h2>Get In Touch</h2>
+                            <h2>Liên hệ</h2>
                             <p class="mb-0">Email: info@yoursite.com <br> Phone: (123) 3240-345-9348 </p>
                         </div>
                     </div>
@@ -504,75 +446,9 @@
             </div>
         </div>
 
-        <!-- footer -->
-        <footer class="site-footer">
-            <div class="container">
 
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <h3 class="footer-heading mb-4 text-white">About</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
-                        <p><a href="#" class="btn btn-primary pill text-white px-4">Read More</a></p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Approach</a></li>
-                                    <li><a href="#">Sustainability</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h3 class="footer-heading mb-4 text-white">Ministries</h3>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Children</a></li>
-                                    <li><a href="#">Women</a></li>
-                                    <li><a href="#">Bible Study</a></li>
-                                    <li><a href="#">Church</a></li>
-                                    <li><a href="#">Missionaries</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-2">
-                        <div class="col-md-12">
-                            <h3 class="footer-heading mb-4 text-white">Social Icons</h3>
-                        </div>
-                        <div class="col-md-12">
-                            <p>
-                                <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
-                                <a href="#" class="p-2"><span class="icon-twitter"></span></a>
-                                <a href="#" class="p-2"><span class="icon-instagram"></span></a>
-                                <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-5 mt-5 text-center">
-                    <div class="col-md-12">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> All Rights Reserved | This template is made with <i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
+    
+        @await Html.PartialAsync("_Footer")
     </div>
 
     <script src="../js/jquery-3.3.1.min.js"></script>
@@ -591,7 +467,7 @@
     <script src="../js/mediaelement-and-player.min.js"></script>
 
     <script src="../js/main.js"></script>
-
+    @await Component.InvokeAsync("NToastNotify")
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

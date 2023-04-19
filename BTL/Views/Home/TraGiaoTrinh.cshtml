@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewData["Title"] = "TraGiaoTrinh";
-    Layout = "_LayoutLibraly";
+    Layout = "~/Views/Shared/Giaotrinh.cshtml";
 }
 @model List<HoSoTra>
 <div style="width:100%">
@@ -11,7 +11,6 @@
             <a asp-controller="Home" asp-action="ThemHoSoTra" >
             <button type="button" class="btn btn-success" style="float:right">  <i class="fa-solid fa-plus"></i>Tạo hồ sơ trả</button>
             </a>
-          
         </span>
     </h1>
 
@@ -95,47 +94,19 @@
         }
     </tbody>
 </table>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" >
 </script>
 <script type="text/javascript">
-
-
-    function AddEmp() {
-
-        var Emp = {};
-        Emp.MaHstra = 'HST4';
-        Emp.MaGt = 'GT13';
-        Emp.MaPhat = '';
-        Emp.MaViPham = '';
-
-
-        $.ajax({
-            url: "https://localhost:7299/api/productapi/AddEmployees",
-            type: "POST",
-            contentType: "application/json;charset=utf-8",
-            data: JSON.stringify(Emp),
-            dataType: "json",
-            success: function (response) {
-
-                alert(response);
-
-            },
-
-            error: function (x, e) {
-                alert('Failed');
-                alert(x.responseText);
-                alert(x.status);
-
-            }
-        });
-    }
-
     $(document).ready(function () {
         $("#btnSave").click(function (e) {
-
-            AddEmp();
-            e.preventDefault();
+           
+            console.log("ggggggggg");
+            toastr.success("tuoilozz", 'vvvv', new { timeOut: 3000 });
+    
         });
     });
 
-</script>  
+</script>
+

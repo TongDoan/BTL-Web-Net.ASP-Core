@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,10 +19,11 @@ namespace BTL.Controllers
     {
         QuanLyGiaoTrinhContext db  = new QuanLyGiaoTrinhContext();
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IToastNotification _toastNotification;
+        public HomeController(ILogger<HomeController> logger, IToastNotification toastNotification)
         {
             _logger = logger;
+            _toastNotification = toastNotification;
         }
         [Authenication]
         public IActionResult Index(int? page)
@@ -37,6 +39,11 @@ namespace BTL.Controllers
         {
             return View();
         }
+        public IActionResult ErrorLayout()
+        {
+            return View();
+        }
+        [Authenication]
         public IActionResult TraGiaoTrinh()
         {
             var lstGt = db.HoSoTras.AsNoTracking().OrderBy(x => x.MaHstra).ToList();
@@ -58,7 +65,7 @@ namespace BTL.Controllers
             ViewBag.matra = matra;
             return View(anh);
         }
-  
+        [Authenication]
         public IActionResult ChiTietTraGiaoTrinh()
         {
             var lstGt = db.ChiTietHstras.AsNoTracking().OrderBy(x => x.MaHstra).ToList();
@@ -90,9 +97,10 @@ namespace BTL.Controllers
                 slthemuon.Slmuon = slthemuon.Slmuon - 1;
             }
             db.SaveChanges();
+            _toastNotification.AddSuccessToastMessage("Đã trả giáo trình.");
             return RedirectToAction("TraGiaoTrinh");
         }
-
+        [Authenication]
         [Route("ThemChiTietHoSoTra")]
         public IActionResult ThemChiTietHoSoTra(string mahstra, string mahsm)
         {
@@ -113,10 +121,11 @@ namespace BTL.Controllers
             var giaotrinh = db.DmgiaoTrinhs.Find(hoso.MaGt);
             giaotrinh.SoLuongGt = giaotrinh.SoLuongGt - 1;
             db.SaveChanges();
+            _toastNotification.AddSuccessToastMessage("Đã thêm thành công hồ sơ.");
             return RedirectToAction("TraGiaoTrinh");
            
         }
-
+        [Authenication]
         [Route("ThemHoSoTra")]
         public IActionResult ThemHoSoTra()
         {
@@ -137,10 +146,17 @@ namespace BTL.Controllers
             {
                 db.HoSoTras.Add(hoso);
                 db.SaveChanges();
+                _toastNotification.AddSuccessToastMessage("Đã thêm hồ sơ trả.");
                 return RedirectToAction("TraGiaoTrinh");
+            }
+            else
+            {
+                _toastNotification.AddErrorToastMessage("Đã xảy ra lỗi.");
+
             }
             return View(hoso);
         }
+        [Authenication]
         [Route("SuaHoSoTra")]
         public IActionResult SuaHoSoTra(string ma)
         {
@@ -159,10 +175,18 @@ namespace BTL.Controllers
             {
                 db.Entry(hoso).State = EntityState.Modified;
                 db.SaveChanges();
+                _toastNotification.AddSuccessToastMessage("Đã cập nhật hồ sơ trả.");
                 return RedirectToAction("TraGiaoTrinh");
+
             }
+            else
+            {
+                _toastNotification.AddErrorToastMessage("Xảy ra lỗi.");
+            }
+            
             return View(hoso);
         }
+        [Authenication]
         [Route("SuaChiTietHoSoTra")]
         public IActionResult SuaChiTietHoSoTra(string ma)
         {
@@ -181,17 +205,23 @@ namespace BTL.Controllers
             {
                 db.Entry(hoso).State = EntityState.Modified;
                 db.SaveChanges();
+                _toastNotification.AddSuccessToastMessage("Đã cập nhật hồ sơ trả.");
                 return RedirectToAction("TraGiaoTrinh");
+            }
+            else
+            {
+                _toastNotification.AddErrorToastMessage("Xảy ra lỗi.");
             }
             return View(hoso);
         }
-
+        [Authenication]
         [Route("XoaChiTietHoSoTra")]
         public IActionResult XoaChiTietHoSoTra(string ma, string magt)
         {
             
             db.Remove(db.ChiTietHstras.Find(ma,magt));
             db.SaveChanges();
+            _toastNotification.AddSuccessToastMessage("Đã xóa hồ sơ.");
             return RedirectToAction("ChiTietTraGiaoTrinh");
         }
 
@@ -203,6 +233,7 @@ namespace BTL.Controllers
             if (listChiTiet != null) db.RemoveRange(listChiTiet);
             db.Remove(db.HoSoTras.Find(ma));
             db.SaveChanges();
+            _toastNotification.AddSuccessToastMessage("Đã xóa hồ sơ.");
             return RedirectToAction("TraGiaoTrinh");
         }
         public IActionResult GTDetail(String magt, int? page)
@@ -220,8 +251,8 @@ namespace BTL.Controllers
             ViewBag.Mahsm = magt;
             return View(lst);
         }
-        
 
+        [Authenication]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Hosomuon(int page = 1)
         {
@@ -232,8 +263,8 @@ namespace BTL.Controllers
             return View(lst);
 
         }
+        [Authenication]
         [Route("themhosomuon")]
-
         public IActionResult themhosomuon()
         {
             ViewBag.MaThe = new SelectList(db.TheMuons.ToList(), "MaThe", "MaThe");
@@ -255,8 +286,8 @@ namespace BTL.Controllers
             }
             return View(sanPham);
         }
+        [Authenication]
         [Route("themgtmuon")]
-
         public IActionResult themgtmuon(String magt)
         {
             ViewBag.MaHsm = new SelectList(db.Hsmuons.Where(x => x.MaHsm == magt).ToList(), "MaHsm", "MaHsm");
@@ -358,6 +389,7 @@ namespace BTL.Controllers
             TempData["Message"] = "Xóa hồ sơ thành công";
             return RedirectToAction("Hosomuon");
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

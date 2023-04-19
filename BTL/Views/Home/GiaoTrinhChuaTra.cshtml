@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewData["Title"] = "GiaoTrinhChuaTra";
-    Layout = "~/Views/Shared/_LayoutLibraly.cshtml";
+    Layout = "~/Views/Shared/Giaotrinh.cshtml";
 }
 @model List<DmgiaoTrinh>
 
@@ -66,7 +66,7 @@
                         <td>
                     <a asp-controller="Home" asp-action="NutTraGiaoTrinh" asp-route-mahstra="@ViewBag.matra" asp-route-magt="@item.MaGt" style="text-decoration: none">
                         <button type="button" class="btn btn-warning">
-                                   Trả sách
+                                   Trả giáo trình
                                 </button>
                             </a>
                            

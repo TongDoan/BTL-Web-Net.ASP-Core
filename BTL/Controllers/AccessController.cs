@@ -1,6 +1,8 @@
-﻿using BTL.Models;
+﻿using BTL.Controllers;
+using BTL.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+using NToastNotify;
 
 namespace BTH1.Controllers
 {
@@ -10,7 +12,11 @@ namespace BTH1.Controllers
         public static string check;
         QuanLyGiaoTrinhContext db = new QuanLyGiaoTrinhContext();
 
-       
+        private readonly IToastNotification _toastNotification;
+        public AccessController( IToastNotification toastNotification)
+        {
+            _toastNotification = toastNotification;
+        }
 
         [HttpGet]
         public IActionResult Login()
@@ -39,16 +45,22 @@ namespace BTH1.Controllers
                         HttpContext.Session.SetString("Quyen", obj.Quyen.ToString());
                         return RedirectToAction("Index", "Home");
                     }
-                    else
+                    else if(obj.Quyen.ToString() == "1")
                     {
                         HttpContext.Session.SetString("UserName", obj.Username.ToString());
                         HttpContext.Session.SetString("Quyen", obj.Quyen.ToString());
                         return RedirectToAction("HomeAdmin", "Admin");
                     }
+                    else
+                    {
+                        _toastNotification.AddErrorToastMessage("Đăng nhập thất bại.");
+                        return RedirectToAction("Login", "Access");
+                    }
 
                 }
                 else
                 {
+                    _toastNotification.AddErrorToastMessage("Đăng nhập thất bại.");
                     return RedirectToAction("Login", "Access");
                 }
         

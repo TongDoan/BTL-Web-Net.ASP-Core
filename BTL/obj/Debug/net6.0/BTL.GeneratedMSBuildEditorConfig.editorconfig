@@ -5,13 +5,14 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BTL
 build_property.RootNamespace = BTL
 build_property.ProjectDir = D:\ASP.Net\BTL\BTL\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\ASP.Net\BTL\BTL
 build_property._RazorSourceGeneratorDebug = 
 
@@ -77,6 +78,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ASP.Net/BTL/BTL/Views/Home/ChiTietTraGiaoTrinh.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGlUaWV0VHJhR2lhb1RyaW5oLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.Net/BTL/BTL/Views/Home/ErrorLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvckxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.Net/BTL/BTL/Views/Home/GiaoTrinhChuaTra.cshtml]
@@ -145,6 +150,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ASP.Net/BTL/BTL/Views/Shared/Giaotrinh.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEdpYW90cmluaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ASP.Net/BTL/BTL/Views/Shared/LayoutError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASP.Net/BTL/BTL/Views/Shared/_Footer.cshtml]
